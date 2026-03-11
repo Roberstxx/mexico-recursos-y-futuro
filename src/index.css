@@ -1,96 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Stucco - warm off-white canvas */
+    --background: 60 11% 95%;
+    --foreground: 60 3% 16%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Cards use stucco */
+    --card: 60 11% 95%;
+    --card-foreground: 60 3% 16%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 60 11% 95%;
+    --popover-foreground: 60 3% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Agave - deep botanical green */
+    --primary: 155 24% 23%;
+    --primary-foreground: 60 11% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Lighter agave for secondary */
+    --secondary: 155 15% 88%;
+    --secondary-foreground: 155 24% 23%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 60 5% 90%;
+    --muted-foreground: 60 3% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 155 15% 88%;
+    --accent-foreground: 155 24% 23%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Grana Cochinilla - earthy crimson */
+    --destructive: 8 75% 35%;
+    --destructive-foreground: 60 11% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 155 24% 23%;
+    --input: 60 5% 85%;
+    --ring: 155 24% 23%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Recinto - volcanic grey */
+    --recinto: 60 3% 16%;
+    --recinto-foreground: 60 11% 95%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Grana as accent */
+    --grana: 8 75% 35%;
+    --grana-foreground: 60 11% 95%;
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 60 11% 95%;
+    --sidebar-foreground: 60 3% 16%;
+    --sidebar-primary: 155 24% 23%;
+    --sidebar-primary-foreground: 60 11% 95%;
+    --sidebar-accent: 155 15% 88%;
+    --sidebar-accent-foreground: 155 24% 23%;
+    --sidebar-border: 155 24% 23%;
+    --sidebar-ring: 155 24% 23%;
   }
 }
 
@@ -100,6 +66,78 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .tectonic-card {
+    @apply border border-primary/30 bg-background p-6 transition-all duration-300;
+  }
+
+  .tectonic-card:hover {
+    @apply border-primary bg-secondary/50;
+  }
+
+  .section-agave {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .section-recinto {
+    background-color: hsl(var(--recinto));
+    color: hsl(var(--recinto-foreground));
+  }
+
+  .grana-accent {
+    color: hsl(var(--grana));
+  }
+
+  .grana-bg {
+    background-color: hsl(var(--grana));
+    color: hsl(var(--grana-foreground));
+  }
+
+  .map-legend {
+    @apply fixed bottom-6 left-6 z-50 border border-primary bg-background/95 backdrop-blur-sm p-4;
+  }
+
+  .data-block {
+    @apply font-body text-5xl md:text-7xl font-bold tracking-tight leading-none;
+  }
+
+  .horizontal-scroll {
+    @apply flex overflow-x-auto snap-x snap-mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+  }
+
+  .horizontal-scroll::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  .horizontal-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+  }
+
+  .snap-section {
+    @apply snap-start flex-shrink-0;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fraunces', serif;
+  }
+
+  .font-body {
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
