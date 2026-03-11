@@ -4,11 +4,11 @@ import { AnimateIn, StaggerContainer, StaggerItem, PageTransition } from "@/comp
 import { BookOpen, ArrowLeft, ArrowRight, User, Hash, BookText, Building2, Briefcase } from "lucide-react";
 
 const studentFields = [
-  { icon: User, label: "Nombre", value: "[Nombre del Estudiante]" },
-  { icon: Hash, label: "Matrícula", value: "[Número de Matrícula]" },
+  { icon: User, label: "Nombre", value: "[Martin Gomez Roberto]" },
+  { icon: Hash, label: "Matrícula", value: "[71315]" },
   { icon: BookText, label: "Materia", value: "Recursos y Necesidades de México" },
-  { icon: Building2, label: "Facultad", value: "[Facultad]" },
-  { icon: Briefcase, label: "Carrera", value: "[Carrera]" },
+  { icon: Building2, label: "Facultad", value: "[Facultad de Ingeniería]" },
+  { icon: Briefcase, label: "Carrera", value: "[Ingeniería en sistemas computacionales]" },
 ];
 
 const bibliography = [
