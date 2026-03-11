@@ -30,7 +30,8 @@ const Index = () => {
 
         <div className="relative z-10 p-6 md:p-12 lg:p-20 max-w-4xl">
           <motion.p
-            className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4"
+            // Cambiamos "text-muted-foreground" por "text-white"
+            className="font-body text-xs uppercase tracking-[0.3em] text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -56,7 +57,7 @@ const Index = () => {
             de México
           </motion.h1>
           <motion.p
-            className="font-body text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-10"
+            className="font-body text-base md:text-lg text-white max-w-xl leading-relaxed mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6 }}
@@ -189,12 +190,12 @@ const Index = () => {
         <div className="p-12 md:p-20 lg:p-32 text-center">
           <AnimateIn>
             <blockquote className="font-display text-2xl md:text-4xl font-bold leading-tight max-w-3xl mx-auto text-recinto-foreground">
-              "Comprender los recursos de México es comprender la tensión entre lo que 
-              <span className="grana-accent"> la tierra ofrece</span> y lo que 
+              "Comprender los recursos de México es comprender la tensión entre lo que
+              <span className="grana-accent"> la tierra ofrece</span> y lo que
               <span className="grana-accent"> el pueblo necesita</span>."
             </blockquote>
             <p className="font-body text-xs text-recinto-foreground/40 mt-8 uppercase tracking-widest">
-              Exhibición Académica · 2025
+              Exhibición Académica · 2026
             </p>
           </AnimateIn>
         </div>
@@ -204,3 +205,4 @@ const Index = () => {
 };
 
 export default Index;
+
