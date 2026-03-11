@@ -184,7 +184,7 @@ const RecursosNaturalesPage = () => {
             </AnimateIn>
           </div>
 
-          <StaggerContainer className="grid md:grid-cols-2 border-t divide-y md:divide-y-0 md:divide-x" staggerDelay={0.2} style-border="hsl(var(--grana) / 0.3)">
+          <StaggerContainer className="grid md:grid-cols-2 border-t border-grana/30 divide-y md:divide-y-0 md:divide-x divide-grana/30" staggerDelay={0.2}>
             {[
               { stat: "43.9%", title: "Pobreza", desc: "55.7 millones de personas viven en situación de pobreza. 8.5 millones en pobreza extrema, sin acceso a alimentación adecuada. La pobreza se concentra en Chiapas, Guerrero y Oaxaca." },
               { stat: "55.6%", title: "Economía Informal", desc: "Más de la mitad de la población ocupada trabaja sin acceso a seguridad social, prestaciones laborales ni estabilidad económica. Es el reflejo estructural de un modelo que no incluye a todos." },

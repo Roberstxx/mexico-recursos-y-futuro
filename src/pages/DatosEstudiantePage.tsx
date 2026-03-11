@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { AnimateIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/AnimationUtils";
-import { BookOpen, ArrowLeft, User, Hash, BookText, Building2, Briefcase } from "lucide-react";
+import { BookOpen, ArrowLeft, ArrowRight, User, Hash, BookText, Building2, Briefcase } from "lucide-react";
 
 const studentFields = [
   { icon: User, label: "Nombre", value: "[Nombre del Estudiante]" },
