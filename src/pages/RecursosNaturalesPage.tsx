@@ -226,13 +226,23 @@ const RecursosNaturalesPage = () => {
         </section>
 
         {/* Navigate to next */}
-        <section className="border-t border-primary p-8 md:p-12 flex justify-between items-center">
-          <button onClick={() => navigate("/")} className="font-body text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
-            <ArrowLeft className="w-4 h-4" /> Inicio
-          </button>
-          <button onClick={() => navigate("/sectores-economicos")} className="group font-body text-xs uppercase tracking-widest text-foreground hover:text-primary transition-colors flex items-center gap-2">
-            Sectores Económicos <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+        <section className="border-t border-primary p-8 md:p-12 flex flex-wrap justify-between items-center gap-4">
+          <motion.button
+            onClick={() => navigate("/")}
+            className="font-body text-sm uppercase tracking-widest bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground px-6 py-4 transition-all duration-300 flex items-center gap-3 shadow-md"
+            whileHover={{ scale: 1.05, x: -4 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <ArrowLeft className="w-5 h-5" /> Inicio
+          </motion.button>
+          <motion.button
+            onClick={() => navigate("/sectores-economicos")}
+            className="group font-body text-sm uppercase tracking-widest bg-primary text-primary-foreground hover:bg-grana px-6 py-4 transition-all duration-300 flex items-center gap-3 shadow-lg"
+            whileHover={{ scale: 1.05, x: 4 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            Sectores Económicos <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+          </motion.button>
         </section>
       </main>
     </PageTransition>

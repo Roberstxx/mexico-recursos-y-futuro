@@ -174,8 +174,8 @@ const Index = () => {
                   </div>
                   <h3 className="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{card.title}</h3>
                   <p className="font-body text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
-                  <div className="mt-6 flex items-center gap-2 font-body text-xs uppercase tracking-widest text-primary group-hover:gap-3 transition-all">
-                    Explorar <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="mt-6 inline-flex items-center gap-2 font-body text-xs uppercase tracking-widest bg-primary text-primary-foreground px-5 py-3 group-hover:bg-grana group-hover:gap-3 transition-all duration-300 shadow-md">
+                    Explorar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </motion.div>
