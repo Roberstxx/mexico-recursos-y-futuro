@@ -207,7 +207,7 @@ const RecursosNaturalesPage = () => {
             ))}
           </StaggerContainer>
 
-          <StaggerContainer className="border-t p-8 md:p-12 grid md:grid-cols-3 gap-8" style={{ borderColor: "hsl(var(--grana) / 0.3)" }} staggerDelay={0.15}>
+          <StaggerContainer className="border-t border-grana/30 p-8 md:p-12 grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
             {[
               { stat: "3.3%", title: "Desempleo", desc: "La tasa oficial no refleja el subempleo ni las condiciones precarias de millones de trabajadores." },
               { stat: "21M", title: "Sin Acceso a Salud", desc: "Millones carecen de acceso efectivo a servicios de salud, agravando la vulnerabilidad social." },
