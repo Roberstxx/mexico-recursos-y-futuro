@@ -31,12 +31,14 @@ const DatosEstudiantePage = () => {
           <div className="p-6 md:p-12 lg:p-20">
             <motion.button
               onClick={() => navigate("/")}
-              className="flex items-center gap-2 font-body text-xs uppercase tracking-widest mb-8 text-recinto-foreground/50 hover:text-recinto-foreground transition-opacity"
+              className="flex items-center gap-2 font-body text-sm uppercase tracking-widest mb-8 bg-recinto-foreground/20 hover:bg-recinto-foreground/40 backdrop-blur-sm px-5 py-3 text-recinto-foreground transition-all duration-300"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
             >
-              <ArrowLeft className="w-4 h-4" /> Inicio
+              <ArrowLeft className="w-5 h-5" /> Inicio
             </motion.button>
             <motion.p
               className="font-body text-xs uppercase tracking-[0.3em] text-recinto-foreground/40 mb-4"
