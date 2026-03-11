@@ -71,13 +71,16 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.5 }}
           >
-            <button
+            <motion.button
               onClick={() => navigate("/recursos-naturales")}
-              className="group border border-primary px-8 py-4 font-body text-xs uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center gap-3"
+              className="group bg-primary text-primary-foreground px-10 py-5 font-body text-sm uppercase tracking-widest hover:bg-grana transition-all duration-300 flex items-center gap-3 shadow-lg"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
               Explorar
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+            </motion.button>
           </motion.div>
         </div>
 
@@ -171,8 +174,8 @@ const Index = () => {
                   </div>
                   <h3 className="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{card.title}</h3>
                   <p className="font-body text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
-                  <div className="mt-6 flex items-center gap-2 font-body text-xs uppercase tracking-widest text-primary group-hover:gap-3 transition-all">
-                    Explorar <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="mt-6 inline-flex items-center gap-2 font-body text-xs uppercase tracking-widest bg-primary text-primary-foreground px-5 py-3 group-hover:bg-grana group-hover:gap-3 transition-all duration-300 shadow-md">
+                    Explorar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </motion.div>
