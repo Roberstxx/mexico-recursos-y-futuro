@@ -61,6 +61,12 @@
 }
 
 @layer base {
+  html,
+  body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }

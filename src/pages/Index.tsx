@@ -11,8 +11,25 @@ import {
   Factory,
   Users,
   BarChart3,
+  BookOpen,
+  Briefcase,
+  Building2,
+  CircleDollarSign,
   Droplets,
+  FileText,
+  Globe2,
   GraduationCap,
+  Handshake,
+  Landmark,
+  Mail,
+  PieChart,
+  ReceiptText,
+  Scale,
+  Ship,
+  TrendingDown,
+  TrendingUp,
+  Vote,
+  Wallet,
   Wheat,
   Mountain,
 } from "lucide-react";
@@ -99,6 +116,89 @@ const thematicStats = [
     stat: "Servicios dominan",
     desc: "La actividad económica actual se concentra principalmente en el sector terciario.",
   },
+];
+
+const economicHighlights = [
+  {
+    icon: Ship,
+    label: "Comercio exterior",
+    value: "Exportaciones",
+    desc: "Intercambio de bienes y servicios con otros países.",
+  },
+  {
+    icon: PieChart,
+    label: "Balanza de pagos",
+    value: "Registro",
+    desc: "Exportaciones, importaciones, inversión, turismo y flujos financieros.",
+  },
+  {
+    icon: Wallet,
+    label: "Gasto público",
+    value: "Presupuesto",
+    desc: "Recursos para servicios, infraestructura, educación, salud y programas sociales.",
+  },
+  {
+    icon: TrendingUp,
+    label: "Precios",
+    value: "Inflación",
+    desc: "Efectos directos en poder adquisitivo, consumo y calidad de vida.",
+  },
+];
+
+const balanceItems = [
+  { label: "Exportaciones", value: "72%", tone: "bg-primary" },
+  { label: "Importaciones", value: "64%", tone: "bg-grana" },
+  { label: "Inversión", value: "46%", tone: "bg-primary/60" },
+  { label: "Turismo", value: "38%", tone: "bg-grana/70" },
+];
+
+const politicalTimeline = [
+  {
+    year: "1917",
+    title: "Constitución vigente",
+    desc: "Base jurídica de derechos, obligaciones, soberanía nacional y división de poderes.",
+  },
+  {
+    year: "Instituciones",
+    title: "Gobierno y vida pública",
+    desc: "El funcionamiento institucional organiza decisiones políticas, económicas y sociales.",
+  },
+  {
+    year: "Ciudadanía",
+    title: "Participación democrática",
+    desc: "La sociedad participa mediante elecciones, opinión pública y vigilancia ciudadana.",
+  },
+  {
+    year: "Retos",
+    title: "Transparencia y seguridad",
+    desc: "México enfrenta desafíos de corrupción, seguridad y fortalecimiento institucional.",
+  },
+];
+
+const partyCards = [
+  {
+    icon: Vote,
+    title: "Procesos electorales",
+    desc: "Presentan candidaturas y propuestas de gobierno durante las elecciones.",
+  },
+  {
+    icon: Users,
+    title: "Representación social",
+    desc: "Expresan intereses, ideologías y necesidades de distintos grupos ciudadanos.",
+  },
+  {
+    icon: Handshake,
+    title: "Participación ciudadana",
+    desc: "Promueven la intervención de la población en la vida democrática del país.",
+  },
+];
+
+const apaReferences = [
+  "Autor desconocido. (s.f.). Problemas económicos de México. Documento PDF proporcionado en clase.",
+  "Constitución Política de los Estados Unidos Mexicanos. (1917). México.",
+  "Banco de México. (s.f.). Información económica y financiera. https://www.banxico.org.mx/",
+  "Instituto Nacional Electoral. (s.f.). Sistema político mexicano. https://www.ine.mx/",
+  "Secretaría de Economía. (s.f.). Comercio exterior de México. https://www.gob.mx/se",
 ];
 
 const Index = () => {
@@ -488,6 +588,573 @@ const Index = () => {
               </span>
             </motion.button>
           </motion.div>
+        </div>
+      </section>
+
+      {/* NUEVO CONTENIDO - SEGUNDO PARCIAL */}
+      <section className="border-t border-primary">
+        <div className="p-6 md:p-12 lg:p-20">
+          <AnimateIn>
+            <div className="flex items-center gap-3 mb-4">
+              <Globe2 className="w-5 h-5 text-primary" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Nuevo contenido del segundo parcial
+              </p>
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 max-w-4xl">
+              Panorama Económico y Político de México
+            </h2>
+            <div className="space-y-4 font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-4xl">
+              <p>
+                La economía y la política son elementos fundamentales para comprender
+                el funcionamiento y desarrollo de un país. En México, factores como el
+                comercio exterior, la balanza de pagos, el gasto gubernamental y la
+                inflación influyen directamente en la estabilidad económica y en la
+                calidad de vida de la población.
+              </p>
+              <p>
+                Asimismo, el conocimiento de la Constitución Política, la situación
+                política actual y el papel de los partidos políticos permite entender
+                la organización del Estado y la participación ciudadana dentro de la
+                sociedad.
+              </p>
+            </div>
+          </AnimateIn>
+        </div>
+
+        <StaggerContainer className="grid md:grid-cols-4 border-t border-primary" staggerDelay={0.1}>
+          {economicHighlights.map((item) => (
+            <StaggerItem key={item.label}>
+              <motion.div
+                className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-primary/25 h-full hover:bg-secondary/40 transition-colors"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <item.icon className="w-8 h-8 text-primary mb-5" />
+                <p className="font-body text-xs uppercase tracking-[0.25em] text-muted-foreground mb-2">
+                  {item.label}
+                </p>
+                <h3 className="font-display text-2xl font-bold mb-3">{item.value}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </section>
+
+      {/* TERCERA SUBCOMPETENCIA */}
+      <section className="border-t border-primary">
+        <div className="p-6 md:p-12 lg:p-20">
+          <AnimateIn>
+            <div className="flex items-center gap-3 mb-5">
+              <CircleDollarSign className="w-5 h-5 text-primary" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Tercera Subcompetencia
+              </p>
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-bold mb-5">
+              Economía Nacional e Internacional
+            </h2>
+            <p className="font-body text-sm md:text-base text-muted-foreground max-w-3xl leading-relaxed">
+              Esta subcompetencia aborda los principales factores económicos que
+              influyen en el desarrollo de México y su relación con otros países.
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <section className="border-t border-primary">
+        <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+          <motion.div
+            className="relative h-[360px] lg:h-auto min-h-[520px] overflow-hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.img
+              src={industriaImg}
+              alt="Industria mexicana vinculada con exportaciones y comercio internacional"
+              className="w-full h-full object-cover"
+              initial={{ scale: 1.08 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2 }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/25 to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8 text-primary-foreground">
+              <Ship className="w-10 h-10 mb-4 text-primary-foreground/70" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] opacity-70">
+                Exportaciones, puertos y mercados globales
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="p-6 md:p-12 lg:p-20 flex items-center">
+            <AnimateIn>
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+                3.1 Comercio Exterior
+              </p>
+              <h3 className="font-display text-3xl md:text-5xl font-bold mb-6">
+                México dentro de la economía global
+              </h3>
+              <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed">
+                El comercio exterior es el intercambio de bienes y servicios que México
+                realiza con otros países. Esta actividad permite la importación y
+                exportación de productos, favoreciendo el crecimiento económico, la
+                generación de empleos y la obtención de divisas. México mantiene
+                relaciones comerciales principalmente con Estados Unidos debido a su
+                cercanía geográfica y a diversos tratados internacionales. El comercio
+                exterior también impulsa la competitividad y la integración de México
+                en la economía global.
+              </p>
+
+              <div className="grid sm:grid-cols-3 gap-4 mt-8">
+                {["Importaciones", "Exportaciones", "Tratados"].map((item) => (
+                  <motion.div
+                    key={item}
+                    className="border border-primary/15 bg-secondary/25 p-4"
+                    whileHover={{ y: -4, backgroundColor: "hsl(155 15% 88% / 0.55)" }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <CircleDollarSign className="w-6 h-6 text-primary mb-3" />
+                    <p className="font-body text-xs uppercase tracking-widest text-muted-foreground">
+                      {item}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-primary">
+        <div className="p-6 md:p-12 lg:p-20 grid lg:grid-cols-[1fr_0.95fr] gap-10 items-center">
+          <AnimateIn>
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <PieChart className="w-5 h-5 text-primary" />
+                <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                  3.2 Balanza de Pagos
+                </p>
+              </div>
+              <h3 className="font-display text-3xl md:text-5xl font-bold mb-6">
+                Registro de la relación económica con el exterior
+              </h3>
+              <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-3xl">
+                La balanza de pagos es un registro contable donde se anotan todas
+                las transacciones económicas que México realiza con el resto del
+                mundo durante un periodo determinado. Incluye exportaciones,
+                importaciones, inversiones extranjeras, turismo y movimientos
+                financieros. Su función principal es mostrar la situación económica
+                internacional del país y determinar si existe superávit o déficit
+                en las relaciones económicas con el exterior.
+              </p>
+            </div>
+          </AnimateIn>
+
+          <AnimateIn delay={0.15}>
+            <div className="border border-primary/20 bg-secondary/25 p-6 md:p-8">
+              <div className="flex items-center justify-between gap-4 mb-8">
+                <div>
+                  <p className="font-body text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                    Panel financiero
+                  </p>
+                  <h4 className="font-display text-2xl font-bold mt-2">Flujos económicos</h4>
+                </div>
+                <BarChart3 className="w-9 h-9 text-primary" />
+              </div>
+
+              <div className="space-y-5">
+                {balanceItems.map((item) => (
+                  <div key={item.label}>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-body text-sm text-muted-foreground">{item.label}</span>
+                      <span className="font-display text-xl font-bold">{item.value}</span>
+                    </div>
+                    <div className="h-4 bg-background border border-primary/10 overflow-hidden">
+                      <motion.div
+                        className={`h-full ${item.tone}`}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: item.value }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <section className="border-t border-primary section-agave">
+        <div className="p-6 md:p-12 lg:p-20">
+          <AnimateIn>
+            <div className="flex items-center gap-3 mb-4">
+              <Wallet className="w-5 h-5 text-primary-foreground/70" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-primary-foreground/50">
+                3.3 Gasto y Déficit Gubernamental
+              </p>
+            </div>
+            <h3 className="font-display text-3xl md:text-5xl font-bold mb-6 max-w-4xl">
+              Recursos públicos, servicios y estabilidad económica
+            </h3>
+            <p className="font-body text-sm md:text-base text-primary-foreground/70 leading-relaxed max-w-4xl">
+              El gasto gubernamental representa los recursos económicos que el Estado
+              utiliza para financiar servicios públicos, infraestructura, educación,
+              salud y programas sociales. Cuando el gobierno gasta más dinero del que
+              obtiene mediante impuestos y otros ingresos, se produce un déficit
+              gubernamental. Este déficit puede provocar endeudamiento y afectar la
+              estabilidad económica del país si no se administra adecuadamente.
+            </p>
+          </AnimateIn>
+        </div>
+
+        <StaggerContainer
+          className="grid md:grid-cols-3 border-t border-primary-foreground/20"
+          staggerDelay={0.15}
+        >
+          {[
+            { value: "Servicios", label: "salud, educación y seguridad pública" },
+            { value: "Obras", label: "infraestructura y desarrollo regional" },
+            { value: "Riesgo", label: "endeudamiento si el déficit no se controla" },
+          ].map((item, index) => (
+            <StaggerItem key={item.value}>
+              <motion.div
+                className="p-6 md:p-10 border-r border-primary-foreground/20 h-full"
+                whileHover={{ backgroundColor: "hsl(155 24% 20% / 1)" }}
+                transition={{ duration: 0.3 }}
+              >
+                <span className="font-display text-6xl font-bold text-primary-foreground/15">
+                  0{index + 1}
+                </span>
+                <h4 className="font-display text-2xl font-bold mt-4">{item.value}</h4>
+                <p className="font-body text-sm text-primary-foreground/70 leading-relaxed mt-3">
+                  {item.label}
+                </p>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </section>
+
+      <section className="border-t border-primary">
+        <div className="p-6 md:p-12 lg:p-20">
+          <AnimateIn>
+            <div className="flex items-center gap-3 mb-4">
+              <ReceiptText className="w-5 h-5 text-primary" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                3.4 Inflación y Deflación
+              </p>
+            </div>
+            <h3 className="font-display text-3xl md:text-5xl font-bold mb-6">
+              El movimiento de los precios en la vida cotidiana
+            </h3>
+            <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-4xl">
+              La inflación es el aumento generalizado y sostenido de los precios
+              de bienes y servicios, lo que reduce el poder adquisitivo de la
+              población. Por otro lado, la deflación ocurre cuando los precios
+              disminuyen de manera continua, lo que puede provocar menor consumo,
+              reducción de inversiones y desempleo. Ambos fenómenos influyen
+              directamente en la economía nacional y en la calidad de vida de las
+              personas.
+            </p>
+          </AnimateIn>
+
+          <div className="grid lg:grid-cols-2 gap-6 mt-10">
+            <motion.div
+              className="border border-primary/20 bg-secondary/20 p-6 md:p-8 group"
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 260 }}
+            >
+              <TrendingUp className="w-10 h-10 text-grana mb-5 group-hover:scale-110 transition-transform" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">
+                Inflación
+              </p>
+              <h4 className="font-display text-3xl font-bold mb-4">Precios en aumento</h4>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                Reduce el poder adquisitivo, encarece productos básicos y presiona
+                el presupuesto familiar.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="border border-primary/20 bg-background p-6 md:p-8 group"
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 260 }}
+            >
+              <TrendingDown className="w-10 h-10 text-primary mb-5 group-hover:scale-110 transition-transform" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">
+                Deflación
+              </p>
+              <h4 className="font-display text-3xl font-bold mb-4">Precios en descenso</h4>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                Puede frenar el consumo, disminuir la inversión y afectar el empleo
+                cuando se mantiene por mucho tiempo.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CUARTA SUBCOMPETENCIA */}
+      <section className="border-t border-primary">
+        <div className="p-6 md:p-12 lg:p-20">
+          <AnimateIn>
+            <div className="flex items-center gap-3 mb-5">
+              <Scale className="w-5 h-5 text-primary" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Cuarta Subcompetencia
+              </p>
+            </div>
+            <h2 className="font-display text-4xl md:text-6xl font-bold mb-5">
+              Sistema Político y Constitucional de México
+            </h2>
+            <p className="font-body text-sm md:text-base text-muted-foreground max-w-3xl leading-relaxed">
+              Esta subcompetencia analiza la organización política de México, su
+              marco constitucional y el papel de los partidos políticos en la
+              democracia.
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <section className="border-t border-primary">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="p-6 md:p-12 lg:p-20 flex items-center">
+            <AnimateIn>
+              <div className="flex items-center gap-3 mb-4">
+                <FileText className="w-5 h-5 text-primary" />
+                <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                  4.1 Constitución Política de los E.U.M.
+                </p>
+              </div>
+              <h3 className="font-display text-3xl md:text-5xl font-bold mb-6">
+                La ley suprema del país
+              </h3>
+              <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed">
+                La Constitución Política de los Estados Unidos Mexicanos es la ley
+                suprema que establece los derechos y obligaciones de los ciudadanos,
+                así como la organización del gobierno mexicano. Promulgada en 1917,
+                contiene principios fundamentales relacionados con la soberanía
+                nacional, la democracia, la división de poderes y las garantías
+                individuales. La Constitución es la base jurídica que regula la vida
+                política, social y económica del país.
+              </p>
+            </AnimateIn>
+          </div>
+
+          <motion.div
+            className="relative min-h-[420px] overflow-hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <img
+              src={recursosImg}
+              alt="Paisaje institucional mexicano con montañas y territorio nacional"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-recinto via-primary/55 to-transparent" />
+            <div className="absolute inset-x-8 bottom-8 border border-primary-foreground/25 bg-background/15 backdrop-blur-md p-6 text-primary-foreground">
+              <Landmark className="w-9 h-9 mb-4 text-primary-foreground/75" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-primary-foreground/60 mb-3">
+                Marco institucional
+              </p>
+              <p className="font-display text-2xl font-bold leading-tight">
+                Soberanía, democracia y división de poderes.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="border-t border-primary section-agave">
+        <div className="p-6 md:p-12 lg:p-20">
+          <AnimateIn>
+            <div className="flex items-center gap-3 mb-4">
+              <Building2 className="w-5 h-5 text-primary-foreground/70" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-primary-foreground/50">
+                4.2 La Situación Política en México
+              </p>
+            </div>
+            <h3 className="font-display text-3xl md:text-5xl font-bold mb-6 max-w-4xl">
+              Gobierno, instituciones y participación ciudadana
+            </h3>
+            <p className="font-body text-sm md:text-base text-primary-foreground/70 leading-relaxed max-w-4xl">
+              La situación política de México está relacionada con el funcionamiento
+              del gobierno, las instituciones públicas y la participación ciudadana.
+              A lo largo de su historia, el país ha experimentado cambios políticos
+              importantes que han influido en la democracia, la economía y el
+              desarrollo social. Actualmente, México enfrenta retos relacionados con
+              la transparencia, la seguridad, la corrupción y el fortalecimiento de
+              las instituciones democráticas.
+            </p>
+          </AnimateIn>
+        </div>
+
+        <div className="border-t border-primary-foreground/20 px-6 md:px-12 lg:px-20 pb-12 lg:pb-20">
+          <StaggerContainer className="grid md:grid-cols-4" staggerDelay={0.12}>
+            {politicalTimeline.map((item) => (
+              <StaggerItem key={item.title}>
+                <motion.div
+                  className="relative pt-10 md:pt-14 md:border-r border-primary-foreground/20 pr-6 h-full"
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="absolute top-0 left-0 w-3 h-3 bg-grana" />
+                  <p className="font-body text-xs uppercase tracking-[0.25em] text-primary-foreground/45 mb-3">
+                    {item.year}
+                  </p>
+                  <h4 className="font-display text-xl font-bold mb-3">{item.title}</h4>
+                  <p className="font-body text-sm text-primary-foreground/70 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      <section className="border-t border-primary">
+        <div className="p-6 md:p-12 lg:p-20">
+          <AnimateIn>
+            <div className="flex items-center gap-3 mb-4">
+              <Vote className="w-5 h-5 text-primary" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                4.3 Los Partidos Políticos
+              </p>
+            </div>
+            <h3 className="font-display text-3xl md:text-5xl font-bold mb-6">
+              Organizaciones para representar ideas y propuestas
+            </h3>
+            <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-4xl">
+              Los partidos políticos son organizaciones que representan diferentes
+              ideas y propuestas para gobernar el país. Su principal función es
+              participar en procesos electorales y promover la participación ciudadana
+              en la vida democrática. En México existen diversos partidos políticos
+              con distintas ideologías, los cuales buscan influir en las decisiones
+              del gobierno y representar los intereses de la sociedad.
+            </p>
+          </AnimateIn>
+
+          <StaggerContainer className="grid md:grid-cols-3 gap-6 mt-10" staggerDelay={0.14}>
+            {partyCards.map((card) => (
+              <StaggerItem key={card.title}>
+                <motion.div
+                  className="border border-primary/20 bg-background p-6 md:p-8 h-full hover:bg-secondary/35 transition-colors"
+                  whileHover={{ y: -6 }}
+                  transition={{ type: "spring", stiffness: 280 }}
+                >
+                  <card.icon className="w-9 h-9 text-primary mb-5" />
+                  <h4 className="font-display text-2xl font-bold mb-4">{card.title}</h4>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                    {card.desc}
+                  </p>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* DISENADOR Y FUENTES */}
+      <section className="border-t border-primary section-recinto">
+        <div className="p-6 md:p-12 lg:p-20 grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
+          <AnimateIn>
+            <div>
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-recinto-foreground/40 mb-4">
+                Apartado del Diseñador
+              </p>
+              <h2 className="font-display text-4xl md:text-6xl font-bold text-recinto-foreground mb-6">
+                Diseñador de la Página
+              </h2>
+              <p className="font-body text-sm md:text-base text-recinto-foreground/65 leading-relaxed max-w-2xl">
+                Proyecto académico desarrollado para la materia correspondiente al
+                segundo parcial.
+              </p>
+            </div>
+          </AnimateIn>
+
+          <AnimateIn delay={0.15}>
+            <motion.div
+              className="border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-md p-6 md:p-8 shadow-2xl"
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 260 }}
+            >
+              <div className="flex flex-col sm:flex-row gap-6 sm:items-center">
+                <div className="w-28 h-28 border border-primary-foreground/25 bg-background/10 flex items-center justify-center flex-shrink-0">
+                  <span className="font-display text-4xl font-bold text-recinto-foreground">RM</span>
+                </div>
+                <div>
+                  <p className="font-body text-xs uppercase tracking-[0.3em] text-recinto-foreground/40 mb-2">
+                    Nombre
+                  </p>
+                  <h3 className="font-display text-3xl font-bold text-recinto-foreground">
+                    Roberto Martín
+                  </h3>
+                  <p className="font-body text-sm text-recinto-foreground/65 mt-3">
+                    Ingeniería en Sistemas Computacionales
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-4 mt-8 pt-8 border-t border-primary-foreground/15">
+                {[
+                  { icon: GraduationCap, label: "Carrera" },
+                  { icon: Mail, label: "Contacto" },
+                  { icon: Briefcase, label: "Académico" },
+                ].map((item) => (
+                  <div key={item.label} className="text-recinto-foreground/70">
+                    <item.icon className="w-6 h-6 mb-3 text-recinto-foreground/45" />
+                    <p className="font-body text-xs uppercase tracking-widest">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <section className="border-t border-primary">
+        <div className="p-6 md:p-12 lg:p-20">
+          <AnimateIn>
+            <div className="flex items-center gap-3 mb-4">
+              <BookOpen className="w-5 h-5 text-primary" />
+              <p className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Fuentes APA
+              </p>
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-8">
+              Referencias consultadas
+            </h2>
+          </AnimateIn>
+
+          <StaggerContainer className="space-y-4 max-w-5xl" staggerDelay={0.08}>
+            {apaReferences.map((reference, index) => (
+              <StaggerItem key={reference} direction="left">
+                <motion.div
+                  className="border-l-2 border-primary/25 pl-5 py-3 hover:border-grana transition-colors"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed">
+                    <span className="font-display text-2xl font-bold text-primary mr-3">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    {reference}
+                  </p>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
